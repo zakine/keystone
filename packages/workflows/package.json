@@ -1,0 +1,23 @@
+{
+  "name": "@keystone/workflows",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@keystone/events": "workspace:*",
+    "@trigger.dev/sdk": "^3.3.17",
+    "stripe": "^17.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

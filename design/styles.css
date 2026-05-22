@@ -1,0 +1,238 @@
+/* KEYSTONE — design tokens */
+:root {
+  /* paper + ink */
+  --paper: #FAFAF7;
+  --paper-2: #F4F3EE;
+  --paper-3: #ECEAE3;
+  --ink-0: #0B0B0F;
+  --ink-1: #16161C;
+  --ink-2: #2B2C36;
+  --ink-3: #56586A;
+  --ink-4: #8A8C9C;
+  --ink-5: #B7B8C5;
+  --line: rgba(11, 11, 15, 0.08);
+  --line-soft: rgba(11, 11, 15, 0.05);
+
+  /* graphite (dark mode) */
+  --g-0: #0A0A0E;
+  --g-1: #0F0F14;
+  --g-2: #15151C;
+  --g-3: #1D1D26;
+  --g-4: #2A2A35;
+  --g-line: rgba(255,255,255,0.07);
+  --g-line-soft: rgba(255,255,255,0.04);
+  --g-ink: #ECECF0;
+  --g-ink-2: #C5C5CE;
+  --g-ink-3: #8A8C9C;
+
+  /* aurora — violet → indigo accent */
+  --aurora-violet: oklch(0.66 0.18 290);
+  --aurora-indigo: oklch(0.62 0.18 265);
+  --aurora-blue:   oklch(0.66 0.15 245);
+  --aurora-soft:   oklch(0.78 0.10 280);
+
+  /* semantic accents */
+  --accent: oklch(0.62 0.18 275);
+  --accent-soft: oklch(0.94 0.04 285);
+  --positive: oklch(0.65 0.13 155);
+  --warning: oklch(0.72 0.14 75);
+  --danger: oklch(0.62 0.18 25);
+
+  /* aurora gradient (the signature) */
+  --aurora: linear-gradient(135deg, oklch(0.70 0.17 295) 0%, oklch(0.62 0.18 270) 45%, oklch(0.66 0.15 240) 100%);
+  --aurora-radial: radial-gradient(120% 80% at 30% 0%, oklch(0.85 0.12 295 / 0.55), transparent 60%),
+                    radial-gradient(110% 70% at 80% 100%, oklch(0.82 0.10 245 / 0.45), transparent 60%);
+
+  /* radii */
+  --r-1: 6px;
+  --r-2: 10px;
+  --r-3: 14px;
+  --r-4: 18px;
+  --r-5: 22px;
+  --r-6: 28px;
+  --r-pill: 9999px;
+
+  /* spacing — 4px base */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 32px;
+  --s-8: 40px;
+  --s-9: 56px;
+  --s-10: 72px;
+
+  /* shadows */
+  --shadow-1: 0 1px 2px rgba(11,11,15,0.04), 0 0 0 1px rgba(11,11,15,0.04);
+  --shadow-2: 0 1px 2px rgba(11,11,15,0.04), 0 4px 12px rgba(11,11,15,0.06);
+  --shadow-3: 0 2px 4px rgba(11,11,15,0.04), 0 12px 28px rgba(11,11,15,0.10);
+  --shadow-4: 0 4px 8px rgba(11,11,15,0.06), 0 24px 60px rgba(11,11,15,0.14);
+  --shadow-glow: 0 0 0 1px rgba(124, 96, 255, 0.18), 0 8px 32px rgba(124, 96, 255, 0.22);
+
+  /* type */
+  --font-display: "Inter Tight", "Inter", -apple-system, system-ui, sans-serif;
+  --font-text:    "Inter", -apple-system, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 520ms;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink-0);
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* ──────────────── canvas chrome ──────────────── */
+.k-canvas-bg {
+  background:
+    radial-gradient(60% 40% at 50% 0%, rgba(124, 96, 255, 0.06), transparent 70%),
+    radial-gradient(40% 30% at 90% 90%, rgba(96, 140, 255, 0.05), transparent 70%),
+    var(--paper);
+}
+
+.k-section-title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ──────────────── components ──────────────── */
+.k-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-4);
+  box-shadow: var(--shadow-1);
+}
+
+.k-card-dark {
+  background: var(--g-2);
+  border: 1px solid var(--g-line);
+  border-radius: var(--r-4);
+}
+
+.k-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.k-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum", "zero";
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+
+.k-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+/* aurora glow used for AI elements */
+.k-aurora-bg {
+  background: var(--aurora);
+}
+.k-aurora-glow {
+  position: relative;
+}
+.k-aurora-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--aurora);
+  -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* striped placeholder for imagery */
+.k-placeholder {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(11,11,15,0.05) 0,
+    rgba(11,11,15,0.05) 1px,
+    transparent 1px,
+    transparent 8px
+  ), linear-gradient(180deg, var(--paper-2), var(--paper-3));
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--ink-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.k-placeholder-dark {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,0.04) 0,
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px,
+    transparent 8px
+  ), linear-gradient(180deg, var(--g-2), var(--g-3));
+  color: var(--g-ink-3);
+}
+
+/* AI typing pulse */
+@keyframes k-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50%      { opacity: 1;    transform: scale(1.0); }
+}
+.k-typing-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--aurora-violet);
+  animation: k-pulse 1.2s var(--ease-in-out) infinite;
+}
+.k-typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.k-typing-dot:nth-child(3) { animation-delay: 0.30s; }
+
+/* aurora ring (used on AI assistant orb) */
+@keyframes k-rotate { to { transform: rotate(360deg); } }
+.k-aurora-ring {
+  background: conic-gradient(
+    from 0deg,
+    oklch(0.70 0.17 295),
+    oklch(0.62 0.18 270),
+    oklch(0.66 0.15 240),
+    oklch(0.78 0.14 285),
+    oklch(0.70 0.17 295)
+  );
+  animation: k-rotate 8s linear infinite;
+}
+
+/* tiny scrollbar reset for screens */
+.k-screen ::-webkit-scrollbar { display: none; }
+.k-screen { scrollbar-width: none; }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Keystone — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="foundations.jsx"></script>
+<script type="text/babel" src="components-1.jsx"></script>
+<script type="text/babel" src="components-2.jsx"></script>
+<script type="text/babel" src="components-showcase.jsx"></script>
+<script type="text/babel" src="screens-1.jsx"></script>
+<script type="text/babel" src="screens-2.jsx"></script>
+
+<script type="text/babel">
+const {
+  DesignCanvas, DCSection, DCArtboard, DCPostIt,
+  BrandCover, Principles, ColorSystem, Typography, SpaceRadiiShadows, Iconography,
+  ButtonsShowcase, InputsShowcase, PromptShowcase, VoiceShowcase, SearchShowcase, ChipsShowcase,
+  LeadCardShowcase, PropCardShowcase, ConvShowcase, NavShowcase, FABShowcase, TypingShowcase,
+  NotifShowcase, TimelineShowcase, EmptyShowcase,
+  ScreenAIInbox, ScreenConversation, ScreenLeadDetail, ScreenProperty, ScreenVisit,
+  ScreenAssistant, ScreenNotifications, ScreenFollowUps, ScreenVoiceCRM, ScreenMatching,
+} = window;
+
+function App() {
+  return (
+    <DesignCanvas>
+
+      {/* ───────── BRAND ───────── */}
+      <DCSection id="brand" title="Brand" subtitle="Cover · principles">
+        <DCArtboard id="cover" label="Cover" width={1200} height={720}>
+          <BrandCover />
+        </DCArtboard>
+        <DCArtboard id="principles" label="Principles" width={1200} height={520}>
+          <Principles />
+        </DCArtboard>
+      </DCSection>
+
+      {/* ───────── FOUNDATIONS ───────── */}
+      <DCSection id="foundations" title="Foundations" subtitle="Color · type · space · motion · iconography">
+        <DCArtboard id="color" label="Color" width={1200} height={1020}>
+          <ColorSystem />
+        </DCArtboard>
+        <DCArtboard id="type" label="Typography" width={1200} height={1000}>
+          <Typography />
+        </DCArtboard>
+        <DCArtboard id="space" label="Space · Radii · Shadows · Motion" width={1200} height={920}>
+          <SpaceRadiiShadows />
+        </DCArtboard>
+        <DCArtboard id="icons" label="Iconography" width={1200} height={600}>
+          <Iconography />
+        </DCArtboard>
+      </DCSection>
+
+      {/* ───────── COMPONENTS — PRIMITIVES ───────── */}
+      <DCSection id="primitives" title="Components · Primitives" subtitle="Buttons · inputs · search · chips · voice · AI prompt">
+        <DCArtboard id="buttons" label="Buttons" width={760} height={220}><ButtonsShowcase /></DCArtboard>
+        <DCArtboard id="inputs" label="Inputs" width={540} height={380}><InputsShowcase /></DCArtboard>
+        <DCArtboard id="search" label="Search" width={540} height={180}><SearchShowcase /></DCArtboard>
+        <DCArtboard id="prompt" label="AI prompt input" width={620} height={240}><PromptShowcase /></DCArtboard>
+        <DCArtboard id="voice" label="Voice input" width={620} height={220}><VoiceShowcase /></DCArtboard>
+        <DCArtboard id="chips" label="AI suggestion chips" width={540} height={320}><ChipsShowcase /></DCArtboard>
+      </DCSection>
+
+      {/* ───────── COMPONENTS — CARDS / NAV ───────── */}
+      <DCSection id="cards" title="Components · Cards & Nav" subtitle="Lead · property · conversation · navigation · FAB · AI states">
+        <DCArtboard id="lead-card" label="Lead card" width={420} height={340}><LeadCardShowcase /></DCArtboard>
+        <DCArtboard id="prop-card" label="Property card" width={420} height={460}><PropCardShowcase /></DCArtboard>
+        <DCArtboard id="conv-card" label="Conversation cards" width={500} height={340}><ConvShowcase /></DCArtboard>
+        <DCArtboard id="nav" label="Bottom nav" width={760} height={250}><NavShowcase /></DCArtboard>
+        <DCArtboard id="fab" label="FAB" width={300} height={220}><FABShowcase /></DCArtboard>
+        <DCArtboard id="typing" label="AI states" width={620} height={300}><TypingShowcase /></DCArtboard>
+        <DCArtboard id="notif" label="Notifications" width={500} height={340}><NotifShowcase /></DCArtboard>
+        <DCArtboard id="timeline" label="Timeline" width={560} height={500}><TimelineShowcase /></DCArtboard>
+        <DCArtboard id="empty" label="Empty state" width={360} height={320}><EmptyShowcase /></DCArtboard>
+      </DCSection>
+
+      {/* ───────── MOBILE SCREENS ───────── */}
+      <DCSection id="screens" title="Mobile screens" subtitle="Ten core flows · iPhone 16 · 402×874">
+        <DCArtboard id="s1-inbox" label="01 · AI Inbox" width={402} height={874}><ScreenAIInbox /></DCArtboard>
+        <DCArtboard id="s2-conv" label="02 · Conversation Timeline" width={402} height={874}><ScreenConversation /></DCArtboard>
+        <DCArtboard id="s3-lead" label="03 · Lead Detail" width={402} height={874}><ScreenLeadDetail /></DCArtboard>
+        <DCArtboard id="s4-prop" label="04 · Property Detail" width={402} height={874}><ScreenProperty /></DCArtboard>
+        <DCArtboard id="s5-visit" label="05 · Visit Mode" width={402} height={874}><ScreenVisit /></DCArtboard>
+        <DCArtboard id="s6-ai" label="06 · AI Assistant" width={402} height={874}><ScreenAssistant /></DCArtboard>
+        <DCArtboard id="s7-notif" label="07 · Notifications" width={402} height={874}><ScreenNotifications /></DCArtboard>
+        <DCArtboard id="s8-followup" label="08 · Follow-ups" width={402} height={874}><ScreenFollowUps /></DCArtboard>
+        <DCArtboard id="s9-voice" label="09 · Voice CRM" width={402} height={874}><ScreenVoiceCRM /></DCArtboard>
+        <DCArtboard id="s10-match" label="10 · Smart Matching" width={402} height={874}><ScreenMatching /></DCArtboard>
+      </DCSection>
+
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-native",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["nativewind/types", "node"]
+  },
+  "include": ["app", "src", "nativewind-env.d.ts", "app.config.ts", "tailwind.config.ts"]
+}
