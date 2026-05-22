@@ -1,0 +1,32 @@
+{
+  "name": "@keystone/conversations",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./hooks": "./src/hooks.ts",
+    "./realtime": "./src/realtime.ts",
+    "./services": "./src/services.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@keystone/db": "workspace:*",
+    "@keystone/events": "workspace:*",
+    "@supabase/supabase-js": "^2.47.10"
+  },
+  "peerDependencies": {
+    "react": ">=18.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "react": "18.3.1",
+    "typescript": "^5.7.2"
+  }
+}

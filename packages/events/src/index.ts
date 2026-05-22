@@ -1,7 +1,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@keystone/db";
 
-export type EventTopic = "system" | "auth" | "ai" | "billing" | "workflow";
+export type EventTopic = "system" | "auth" | "ai" | "billing" | "conversation" | "workflow";
 
 export type PlatformEvent<TPayload extends Record<string, unknown> = Record<string, unknown>> = {
   id: string;

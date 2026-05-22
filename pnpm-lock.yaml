@@ -217,6 +217,28 @@ importers:
         specifier: ^5.7.2
         version: 5.9.3
 
+  packages/conversations:
+    dependencies:
+      '@keystone/db':
+        specifier: workspace:*
+        version: link:../db
+      '@keystone/events':
+        specifier: workspace:*
+        version: link:../events
+      '@supabase/supabase-js':
+        specifier: ^2.47.10
+        version: 2.106.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.18
+        version: 18.3.29
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+
   packages/db:
     dependencies:
       '@supabase/ssr':
