@@ -83,8 +83,7 @@ export const keystoneGradients = {
     "linear-gradient(135deg, oklch(0.70 0.17 295) 0%, oklch(0.62 0.18 270) 45%, oklch(0.66 0.15 240) 100%)",
   auroraRadial:
     "radial-gradient(120% 80% at 30% 0%, oklch(0.85 0.12 295 / 0.55), transparent 60%), radial-gradient(110% 70% at 80% 100%, oklch(0.82 0.10 245 / 0.45), transparent 60%)",
-  aiSurface:
-    "linear-gradient(180deg, oklch(0.96 0.04 285 / 0.6), oklch(0.96 0.03 270 / 0.4))",
+  aiSurface: "linear-gradient(180deg, oklch(0.96 0.04 285 / 0.6), oklch(0.96 0.03 270 / 0.4))",
 } as const;
 
 export const keystoneMotion = {

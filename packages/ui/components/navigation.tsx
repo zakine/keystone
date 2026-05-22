@@ -29,7 +29,9 @@ export function BottomNav({
     <nav
       className={cn(
         "flex items-center justify-around px-3 pb-3.5 pt-2.5 backdrop-blur-2xl",
-        dark ? "border-t border-graphite-line bg-graphite-1/85" : "border-t border-line bg-white/85",
+        dark
+          ? "border-t border-graphite-line bg-graphite-1/85"
+          : "border-t border-line bg-white/85",
       )}
     >
       {items.map((item) => {
@@ -51,13 +53,24 @@ export function BottomNav({
           <button
             className={cn(
               "flex flex-col items-center gap-[3px] border-0 bg-transparent px-2.5 py-1",
-              isActive ? (dark ? "text-white" : "text-ink-0") : dark ? "text-graphite-ink-3" : "text-ink-4",
+              isActive
+                ? dark
+                  ? "text-white"
+                  : "text-ink-0"
+                : dark
+                  ? "text-graphite-ink-3"
+                  : "text-ink-4",
             )}
             key={item.id}
             type="button"
           >
             <Icon name={item.icon} size={22} stroke={isActive ? 1.8 : 1.5} />
-            <span className={cn("text-[10px] tracking-normal", isActive ? "font-semibold" : "font-medium")}>
+            <span
+              className={cn(
+                "text-[10px] tracking-normal",
+                isActive ? "font-semibold" : "font-medium",
+              )}
+            >
               {item.label}
             </span>
           </button>

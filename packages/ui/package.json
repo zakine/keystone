@@ -9,6 +9,7 @@
     "./components": "./components/index.ts",
     "./components/*": "./components/*.tsx",
     "./provider": "./src/provider.tsx",
+    "./nativewind": "./nativewind.preset.ts",
     "./tailwind": "./tailwind.preset.ts",
     "./tamagui": "./src/tamagui.config.ts",
     "./themes": "./themes/index.ts",

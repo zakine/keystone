@@ -24,7 +24,8 @@ export type KeystoneIconName =
   | "voice"
   | "x";
 
-export type IconProps = SVGProps<SVGSVGElement> & {
+export type IconProps = Omit<SVGProps<SVGSVGElement>, "color" | "height" | "stroke" | "width"> & {
+  color?: string;
   name: KeystoneIconName;
   size?: number;
   stroke?: number;
@@ -156,7 +157,13 @@ const paths: Record<KeystoneIconName, JSX.Element> = {
   ),
 };
 
-export function Icon({ color = "currentColor", name, size = 18, stroke = 1.5, ...props }: IconProps) {
+export function Icon({
+  color = "currentColor",
+  name,
+  size = 18,
+  stroke = 1.5,
+  ...props
+}: IconProps) {
   return (
     <svg
       fill="none"

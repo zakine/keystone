@@ -1,4 +1,4 @@
-import preset from "@keystone/ui/tailwind";
+import preset from "@keystone/ui/nativewind";
 import type { Config } from "tailwindcss";
 
 const config = {

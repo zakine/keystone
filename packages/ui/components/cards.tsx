@@ -3,13 +3,7 @@ import type { ReactNode } from "react";
 import { cn } from "../src/lib/cn";
 import { Icon, type KeystoneIconName } from "./icon";
 
-export function KeystoneCard({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export function KeystoneCard({ children, className }: { children: ReactNode; className?: string }) {
   return <div className={cn("k-card", className)}>{children}</div>;
 }
 

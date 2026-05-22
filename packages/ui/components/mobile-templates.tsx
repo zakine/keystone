@@ -5,13 +5,7 @@ import { nativeTokens } from "../tokens/native";
 
 const colors = nativeTokens.colors;
 
-export function MobileScreen({
-  children,
-  dark = false,
-}: {
-  children: ReactNode;
-  dark?: boolean;
-}) {
+export function MobileScreen({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
   return (
     <View
       style={{

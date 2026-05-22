@@ -10,7 +10,9 @@ export function AIPromptInput({
       <div className="flex flex-col gap-3 rounded-[16px] bg-white px-4 py-3.5">
         <div className="flex items-center gap-2.5">
           <div className="h-6 w-6 rounded-full bg-aurora shadow-[0_0_12px_oklch(0.62_0.18_270_/_0.5)]" />
-          <span className="text-sm tracking-normal text-ink-3">Ask Keystone or paste a message</span>
+          <span className="text-sm tracking-normal text-ink-3">
+            Ask Keystone or paste a message
+          </span>
           <span className="k-mono ml-auto">⌘K</span>
         </div>
         <div className="flex flex-wrap gap-1.5">
@@ -96,7 +98,13 @@ export function AITyping({ dark = false }: { dark?: boolean }) {
       }
     >
       <span className="h-[18px] w-[18px] rounded-full bg-aurora" />
-      <span className={dark ? "text-[13px] font-medium text-graphite-ink-2" : "text-[13px] font-medium text-ink-2"}>
+      <span
+        className={
+          dark
+            ? "text-[13px] font-medium text-graphite-ink-2"
+            : "text-[13px] font-medium text-ink-2"
+        }
+      >
         Keystone is thinking
       </span>
       <span className="flex h-2 items-center gap-1">
@@ -108,9 +116,18 @@ export function AITyping({ dark = false }: { dark?: boolean }) {
   );
 }
 
-export function AssistantOrb({ listening = false, size = 96 }: { listening?: boolean; size?: number }) {
+export function AssistantOrb({
+  listening = false,
+  size = 96,
+}: {
+  listening?: boolean;
+  size?: number;
+}) {
   return (
-    <div className="relative flex items-center justify-center" style={{ height: size, width: size }}>
+    <div
+      className="relative flex items-center justify-center"
+      style={{ height: size, width: size }}
+    >
       <div className="k-aurora-ring absolute inset-0 rounded-full opacity-70 blur-lg" />
       <div
         className="relative flex items-center justify-center rounded-full bg-aurora shadow-[inset_0_-8px_16px_rgba(0,0,0,0.25),inset_0_8px_16px_rgba(255,255,255,0.2)]"
