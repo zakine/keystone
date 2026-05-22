@@ -5,10 +5,16 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./button": "./src/components/button.tsx",
+    "./button": "./components/button.tsx",
+    "./components": "./components/index.ts",
+    "./components/*": "./components/*.tsx",
     "./provider": "./src/provider.tsx",
     "./tailwind": "./tailwind.preset.ts",
-    "./tamagui": "./src/tamagui.config.ts"
+    "./tamagui": "./src/tamagui.config.ts",
+    "./themes": "./themes/index.ts",
+    "./themes/keystone.css": "./themes/keystone.css",
+    "./tokens": "./tokens/index.ts",
+    "./tokens/native": "./tokens/native.ts"
   },
   "scripts": {
     "build": "tsc --noEmit",
@@ -23,6 +29,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.468.0",
+    "react-native-svg": "^15.8.0",
     "tailwind-merge": "^2.6.0",
     "tamagui": "^1.119.0"
   },

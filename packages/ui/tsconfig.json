@@ -3,5 +3,5 @@
   "compilerOptions": {
     "jsx": "react-jsx"
   },
-  "include": ["src", "tailwind.preset.ts"]
+  "include": ["components", "src", "tailwind.preset.ts", "themes", "tokens"]
 }
