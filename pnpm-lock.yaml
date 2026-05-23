@@ -322,15 +322,27 @@ importers:
 
   packages/workflows:
     dependencies:
+      '@keystone/conversations':
+        specifier: workspace:*
+        version: link:../conversations
+      '@keystone/db':
+        specifier: workspace:*
+        version: link:../db
       '@keystone/events':
         specifier: workspace:*
         version: link:../events
+      '@supabase/supabase-js':
+        specifier: ^2.47.10
+        version: 2.106.1
       '@trigger.dev/sdk':
         specifier: ^3.3.17
-        version: 3.3.17(zod@3.23.8)
+        version: 3.3.17(zod@3.25.76)
       stripe:
         specifier: ^17.5.0
         version: 17.7.0
+      zod:
+        specifier: ^3.24.1
+        version: 3.25.76
     devDependencies:
       typescript:
         specifier: ^5.7.2
@@ -12153,28 +12165,6 @@ snapshots:
       zod: 3.23.8
       zod-error: 1.5.0
       zod-validation-error: 1.5.0(zod@3.23.8)
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-
-  '@trigger.dev/sdk@3.3.17(zod@3.23.8)':
-    dependencies:
-      '@opentelemetry/api': 1.9.0
-      '@opentelemetry/api-logs': 0.52.1
-      '@opentelemetry/semantic-conventions': 1.25.1
-      '@trigger.dev/core': 3.3.17
-      chalk: 5.6.2
-      cronstrue: 2.59.0
-      debug: 4.4.3
-      evt: 2.5.9
-      slug: 6.1.0
-      terminal-link: 3.0.0
-      ulid: 2.4.0
-      uncrypto: 0.1.3
-      uuid: 9.0.1
-      ws: 8.20.1
-      zod: 3.23.8
     transitivePeerDependencies:
       - bufferutil
       - supports-color

@@ -4,7 +4,12 @@
   "version": "0.1.0",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./automation": "./src/automation.ts",
+    "./engine": "./src/engine.ts",
+    "./events": "./src/events.ts",
+    "./jobs": "./src/jobs.ts",
+    "./triggers": "./src/triggers.ts"
   },
   "scripts": {
     "build": "tsc --noEmit",
@@ -13,9 +18,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@keystone/conversations": "workspace:*",
+    "@keystone/db": "workspace:*",
     "@keystone/events": "workspace:*",
+    "@supabase/supabase-js": "^2.47.10",
     "@trigger.dev/sdk": "^3.3.17",
-    "stripe": "^17.5.0"
+    "stripe": "^17.5.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "typescript": "^5.7.2"

@@ -1,6 +1,12 @@
 import { defineConfig } from "@trigger.dev/sdk/v3";
 import Stripe from "stripe";
 
+export * from "./automation";
+export * from "./engine";
+export * from "./events";
+export * from "./jobs";
+export * from "./triggers";
+
 export type WorkflowRuntimeConfig = {
   projectId?: string;
   stripeSecretKey: string;
