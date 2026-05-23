@@ -50,6 +50,9 @@ importers:
       '@keystone/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      '@keystone/crm':
+        specifier: workspace:*
+        version: link:../../packages/crm
       '@keystone/db':
         specifier: workspace:*
         version: link:../../packages/db
@@ -135,6 +138,9 @@ importers:
       '@keystone/auth':
         specifier: workspace:*
         version: link:../../packages/auth
+      '@keystone/crm':
+        specifier: workspace:*
+        version: link:../../packages/crm
       '@keystone/db':
         specifier: workspace:*
         version: link:../../packages/db
@@ -241,6 +247,28 @@ importers:
       react:
         specifier: 18.3.1
         version: 18.3.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+
+  packages/crm:
+    dependencies:
+      '@keystone/ai':
+        specifier: workspace:*
+        version: link:../ai
+      '@keystone/conversations':
+        specifier: workspace:*
+        version: link:../conversations
+      '@keystone/db':
+        specifier: workspace:*
+        version: link:../db
+      '@keystone/workflows':
+        specifier: workspace:*
+        version: link:../workflows
+      '@supabase/supabase-js':
+        specifier: ^2.47.10
+        version: 2.106.1
+    devDependencies:
       typescript:
         specifier: ^5.7.2
         version: 5.9.3

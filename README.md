@@ -11,6 +11,7 @@ Reusable AI SaaS factory starter built as a strict TypeScript monorepo.
 - `packages/db` - Supabase browser, server, service-role, and typed database scaffolding.
 - `packages/auth` - shared auth contracts and Supabase session helpers.
 - `packages/conversations` - reusable conversation engine domain services, realtime hooks, and provider-ready contracts.
+- `packages/crm` - CRM vertical template composed from conversations, AI, workflows, and shared UI.
 - `packages/events` - realtime/event channel contracts.
 - `packages/workflows` - Trigger.dev and Stripe workflow integration scaffolding.
 

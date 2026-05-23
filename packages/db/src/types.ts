@@ -147,6 +147,160 @@ export type Database = {
         Update: Partial<Database["public"]["Tables"]["conversation_workflows"]["Insert"]>;
         Relationships: [];
       };
+      crm_leads: {
+        Row: {
+          budget_max: number | null;
+          budget_min: number | null;
+          conversation_id: string | null;
+          created_at: string;
+          display_name: string;
+          email: string | null;
+          id: string;
+          last_contacted_at: string | null;
+          location_query: string | null;
+          metadata: Json;
+          owner_id: string | null;
+          phone: string | null;
+          pipeline_stage_id: string | null;
+          requirements: Json;
+          score: number;
+          source: string | null;
+          status: Database["public"]["Enums"]["crm_lead_status"];
+          updated_at: string;
+          workspace_id: string | null;
+        };
+        Insert: {
+          budget_max?: number | null;
+          budget_min?: number | null;
+          conversation_id?: string | null;
+          created_at?: string;
+          display_name: string;
+          email?: string | null;
+          id?: string;
+          last_contacted_at?: string | null;
+          location_query?: string | null;
+          metadata?: Json;
+          owner_id?: string | null;
+          phone?: string | null;
+          pipeline_stage_id?: string | null;
+          requirements?: Json;
+          score?: number;
+          source?: string | null;
+          status?: Database["public"]["Enums"]["crm_lead_status"];
+          updated_at?: string;
+          workspace_id?: string | null;
+        };
+        Update: Partial<Database["public"]["Tables"]["crm_leads"]["Insert"]>;
+        Relationships: [];
+      };
+      crm_pipeline_stages: {
+        Row: {
+          created_at: string;
+          id: string;
+          kind: Database["public"]["Enums"]["crm_pipeline_stage_kind"];
+          metadata: Json;
+          name: string;
+          position: number;
+          updated_at: string;
+          workspace_id: string | null;
+        };
+        Insert: {
+          created_at?: string;
+          id?: string;
+          kind: Database["public"]["Enums"]["crm_pipeline_stage_kind"];
+          metadata?: Json;
+          name: string;
+          position?: number;
+          updated_at?: string;
+          workspace_id?: string | null;
+        };
+        Update: Partial<Database["public"]["Tables"]["crm_pipeline_stages"]["Insert"]>;
+        Relationships: [];
+      };
+      crm_properties: {
+        Row: {
+          address: string | null;
+          area_sqm: number | null;
+          attributes: Json;
+          bedrooms: number | null;
+          created_at: string;
+          id: string;
+          location: string | null;
+          metadata: Json;
+          price: number | null;
+          title: string;
+          updated_at: string;
+          workspace_id: string | null;
+        };
+        Insert: {
+          address?: string | null;
+          area_sqm?: number | null;
+          attributes?: Json;
+          bedrooms?: number | null;
+          created_at?: string;
+          id?: string;
+          location?: string | null;
+          metadata?: Json;
+          price?: number | null;
+          title: string;
+          updated_at?: string;
+          workspace_id?: string | null;
+        };
+        Update: Partial<Database["public"]["Tables"]["crm_properties"]["Insert"]>;
+        Relationships: [];
+      };
+      crm_property_matches: {
+        Row: {
+          created_at: string;
+          id: string;
+          lead_id: string;
+          property_id: string;
+          reasons: Json;
+          score: number;
+          status: Database["public"]["Enums"]["crm_match_status"];
+          updated_at: string;
+        };
+        Insert: {
+          created_at?: string;
+          id?: string;
+          lead_id: string;
+          property_id: string;
+          reasons?: Json;
+          score: number;
+          status?: Database["public"]["Enums"]["crm_match_status"];
+          updated_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["crm_property_matches"]["Insert"]>;
+        Relationships: [];
+      };
+      crm_reminders: {
+        Row: {
+          conversation_id: string | null;
+          created_at: string;
+          due_at: string | null;
+          id: string;
+          lead_id: string | null;
+          metadata: Json;
+          status: Database["public"]["Enums"]["crm_reminder_status"];
+          task_id: string | null;
+          title: string;
+          updated_at: string;
+        };
+        Insert: {
+          conversation_id?: string | null;
+          created_at?: string;
+          due_at?: string | null;
+          id?: string;
+          lead_id?: string | null;
+          metadata?: Json;
+          status?: Database["public"]["Enums"]["crm_reminder_status"];
+          task_id?: string | null;
+          title: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database["public"]["Tables"]["crm_reminders"]["Insert"]>;
+        Relationships: [];
+      };
       conversations: {
         Row: {
           created_at: string;
@@ -249,6 +403,10 @@ export type Database = {
     Enums: {
       conversation_channel: "in_app" | "email" | "sms" | "whatsapp" | "voice" | "web" | "api";
       conversation_status: "open" | "pending" | "closed" | "archived";
+      crm_lead_status: "new" | "contacted" | "qualified" | "nurture" | "won" | "lost";
+      crm_match_status: "suggested" | "shortlisted" | "dismissed" | "sent";
+      crm_pipeline_stage_kind: "lead" | "qualified" | "proposal" | "negotiation" | "closed";
+      crm_reminder_status: "open" | "snoozed" | "completed" | "cancelled";
       message_role: "user" | "assistant" | "system" | "participant";
       message_status: "draft" | "queued" | "sent" | "delivered" | "read" | "failed";
       participant_kind: "user" | "contact" | "agent" | "system" | "external";

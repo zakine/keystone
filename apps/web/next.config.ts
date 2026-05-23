@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   transpilePackages: [
     "@keystone/ai",
     "@keystone/auth",
+    "@keystone/crm",
     "@keystone/db",
     "@keystone/events",
     "@keystone/ui",

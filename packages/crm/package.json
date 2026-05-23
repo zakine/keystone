@@ -1,0 +1,28 @@
+{
+  "name": "@keystone/crm",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./services": "./src/services.ts",
+    "./template": "./src/template.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@keystone/ai": "workspace:*",
+    "@keystone/conversations": "workspace:*",
+    "@keystone/db": "workspace:*",
+    "@keystone/workflows": "workspace:*",
+    "@supabase/supabase-js": "^2.47.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

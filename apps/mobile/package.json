@@ -13,6 +13,7 @@
   "dependencies": {
     "@expo/metro-runtime": "~4.0.0",
     "@keystone/auth": "workspace:*",
+    "@keystone/crm": "workspace:*",
     "@keystone/db": "workspace:*",
     "@keystone/events": "workspace:*",
     "@keystone/ui": "workspace:*",
